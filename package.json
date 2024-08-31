@@ -1,0 +1,27 @@
+{
+  "name": "operations",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.4",
+    "flowbite-react": "^0.10.1",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-customizable-progressbar": "^2.0.0",
+    "react-dom": "^18",
+    "react-redux": "^9.1.2",
+    "react-toastify": "^10.0.5",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
