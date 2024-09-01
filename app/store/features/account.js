@@ -12,11 +12,16 @@ account:null,
     setAccount: (state, action) => {
       state.account=action.payload.account;
       state.isLogin=true;
-    }
+    },
+    logOut: (state, action) => {
+      state.account=null;
+      state.isLogin=false;
+      localStorage.removeItem('token')
+    },
 
   },
 });
 
-export const { setAccount } = account.actions;
+export const { setAccount,logOut } = account.actions;
 
 export default account.reducer;

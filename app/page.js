@@ -2,9 +2,11 @@
 
 "use client"
 import Link from "next/link"
+import LogOutBtn from "./components/LogOutBtn"
 export default function Home(){
  
   return <div className="flex items-center justify-center h-screen bg-white">
+    <LogOutBtn/>
     <div className="flex gap-10 p-4 items-center justify-center flex-wrap ">
 
 
