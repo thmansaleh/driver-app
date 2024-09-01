@@ -86,7 +86,7 @@ const update=async()=>{
             </span>
             
             :
-            <TextInput onChange={e=>setCloseLinesCount(e.target.value)} className="w-20"  type="number" />
+            <TextInput defaultValue={report.close_lines_count} onChange={e=>setCloseLinesCount(e.target.value)} className="w-20"  type="number" />
             </div>
 
      
@@ -97,7 +97,7 @@ const update=async()=>{
             </span>
             
             :
-            <TextInput onChange={e=>setCarStopLine(e.target.value)} className="w-20"  type="text" />
+            <TextInput defaultValue={report.cars_stop} onChange={e=>setCarStopLine(e.target.value)} className="w-20"  type="text" />
             </div>
 
 
@@ -128,7 +128,7 @@ const update=async()=>{
             </span>
             
             :
-            <TextInput onChange={e=>setNote(e.target.value)} className="w-36"  type="text" />
+            <TextInput defaultValue={report.note}  onChange={e=>setNote(e.target.value)} className="w-36"  type="text" />
             </div>
             <Plates reportNo={report.report_no}/>
             <PlatesModal report={report}/>
