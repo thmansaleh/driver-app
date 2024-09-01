@@ -9,8 +9,8 @@ import { setAccount } from '../store/features/account';
 export default function Login(){
   const router = useRouter()
 
-  const [username,setUsername] = useState()
-  const [password,setPassword] = useState()
+  const [username,setUsername] = useState('')
+  const [password,setPassword] = useState('')
   const errorMsg=useRef()
   const loading=useRef()
   const dispatch=useDispatch()
@@ -44,20 +44,20 @@ loading.current.style.display='flex'
  };
 
 
-return <section className="select-none bg-gray-100 ">
-  <div className="flex flex-col items-center  justify-center px-6 py-8 bg-gray-100  fixed inset-0">
-    <div className="w-full md:w-1/3  rounded-lg shadow-2xl  bg-gray-500 ">
+return <section className="select-none  ">
+  <div className="flex flex-col items-center  justify-center px-6 py-8 text-gray-800   fixed inset-0">
+    <div className="w-full md:w-1/3  rounded-lg shadow-2xl   ">
       <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-        <h1  className="text-md text-center font-bold leading-tight tracking-tight text-white  mb-6">
+        <h1  className="text-md text-center font-bold leading-tight tracking-tight   mb-6">
        وحدة إدارة  الحوادث المرورية 
         </h1>
 
           <div>
-            <label htmlFor="email" className="block mb-2 text-sm  text-white  font-semibold">اسم المستخدم</label>
+            <label htmlFor="email" className="block mb-2 text-sm   font-semibold">اسم المستخدم</label>
             <input value={username} onChange={(e)=>setUsername(e.target.value)} type="text" name="username" id="email" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" placeholder="" required />
           </div>
           <div>
-            <label  className="block mb-2 text-sm font-medium text-white">كلمة المرور</label>
+            <label  className="block mb-2 text-sm font-medium ">كلمة المرور</label>
             <input value={password} onChange={(e)=>setPassword(e.target.value)} type="text"  placeholder="" className="focus:ring-gray-800 focus:border-gray-800 bg-gray-50 border border-gray-300 text-gray-900 w-full  rounded-lg p-2.5" required />
           </div>
 

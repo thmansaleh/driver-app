@@ -20,8 +20,10 @@ const update=async()=>{
 }
   return (
     <>
-   <div onClick={() => setOpenModal(true)}  className="text-green-500">{report.report_no}</div>
-
+   {/* <div onClick={() => setOpenModal(true)}  className="text-green-500">{report.report_no}</div> */}
+   <td onClick={() => setOpenModal(true)} className="text-green-500  font-semibold  py-4">
+   {report.report_no}
+        </td>
        
 
         <Modal show={openModal} onClose={() => setOpenModal(false)}>

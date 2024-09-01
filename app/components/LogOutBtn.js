@@ -18,7 +18,7 @@ import { useDispatch } from "react-redux";
 import { logOut } from "../store/features/account";
 
 export default function LogOutBtn() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 const dispatch=useDispatch()
   const handleClose = () => setIsOpen(false);
 

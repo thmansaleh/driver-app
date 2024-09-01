@@ -19,13 +19,14 @@ if(isLoading) return <div className=" fixed inset-0 flex justify-center items-ce
    <div className="py-2 bg-green-400 text-sm font-semibold text-white text-center">الاحداث الأخيرة</div>
 
    </BackArrowBtn>
- {data.map(report=>{
+   <Table data={data}/>
+ {/* {data.map(report=>{
         return <div className="flex justify-around py-2 text-sm font-semibold items-center gap-x-3 rounded-lg bg-gray-100 shadow-sm" key={report.id}>
 <InformationModal report={report} />
 <div>{report.source_name}</div>
 <div>{report.report_type}</div>
         </div>
-    })}
+    })} */}
  </div>
     </>
  }
