@@ -5,7 +5,6 @@ import axios from 'axios';
 import { apiUrl } from '../constants';
 export const getDriverReports= async (startDate,endDate) => {
   const token=localStorage.getItem('token')
- console.log(token)
 
     const url =`${apiUrl}/get-reports-by-job-id`
     let end = new Date(endDate); 

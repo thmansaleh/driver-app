@@ -1,7 +1,6 @@
 import InformationModal from "./Modal"
 
 export default function Table({data}) {
-  // console.log('from table',data)
   // return 'grg'
   return <div className="relative overflow-auto max-h-svh  shadow-md ">
   <table className="w-full text-sm text-center  text-gray-500 ">

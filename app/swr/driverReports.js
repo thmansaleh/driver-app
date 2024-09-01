@@ -16,7 +16,9 @@ export function swrDriverReports(){
 
    return response.data;
  };
-const { data , error, isLoading } = useSWR(url, fetcher)
+const { data , error, isLoading } = useSWR(url, fetcher,{
+  refreshInterval:2000
+})
 return {
   data,
   isLoading,

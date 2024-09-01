@@ -5,7 +5,6 @@ const url =`${apiUrl}/add-plate`
 
 export const addPlate= async ( report_no, plate_no, plate_source,removed ) => {
     const token=localStorage.getItem('token')
-    console.log(token)
 
    const response = await axios.get(url,{
 

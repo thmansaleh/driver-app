@@ -16,7 +16,6 @@ export default function InformationModal ({report}) {
   const [note, setNote] = useState('');
 const update=async()=>{
   const data = await updateReport(report.id,carStopLine,closeLinesCount,description,note)
-  // console.log(report.id,carStopLine,closeLinesCount,description,note)
   setOpenModal(false)
 }
   return (

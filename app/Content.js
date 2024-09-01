@@ -18,7 +18,6 @@ if(token){
   
   const verivey = async ()=>{
      const data= await verifyToken()
-    //  console.log(data)
      if(data.status){
       dispatch(setAccount({account:data.user}))
      }

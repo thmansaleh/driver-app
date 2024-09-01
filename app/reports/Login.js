@@ -17,7 +17,6 @@ router.push(`?job_id=${username}`)
   }else{
 setMassege('اسم المستخدم غير موحود')
   }
-  console.log(user)
 
 }else{
     setMassege('ادخل الرقم المالي وكلمة المرور')
