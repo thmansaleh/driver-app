@@ -9,8 +9,8 @@ import { setAccount } from '../store/features/account';
 export default function Login(){
   const router = useRouter()
 
-  const [username,setUsername] = useState(81562)
-  const [password,setPassword] = useState(81562)
+  const [username,setUsername] = useState()
+  const [password,setPassword] = useState()
   const errorMsg=useRef()
   const loading=useRef()
   const dispatch=useDispatch()
