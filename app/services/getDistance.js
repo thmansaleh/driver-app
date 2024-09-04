@@ -11,7 +11,7 @@ export const getDistance= async (  ) => {
         origins:'25.381886,55.460038',
         destinations:'24.453884,54.377343',
         mode:'driving',
-        key:'AIzaSyD7e4cuSEMpIyLgiLM5skxZ7S6F9DXtggE',
+        key:'AIzaSyAVK3azJSUF6m30MT4P1atQtggJJWn4XHA',
     } });
     console.log(response.data)
     return response.data;
