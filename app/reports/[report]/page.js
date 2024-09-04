@@ -2,6 +2,8 @@
 import { swrReport } from "@/app/swr/report"
 import ReportLocation from "./ReportLocation"
 import { AcceptModal } from "./AcceptModal"
+import TimeAndDistance from "./TimeAndDistance"
+import RedirectToMap from "./RedirectToMap"
 
 function page({ params }) {
     const reportId = params.report
@@ -26,7 +28,10 @@ function page({ params }) {
                     <div> الشارع : {data.street_name}</div>
                     <div> الوصف : {data.description}</div>
                     <div> الملاحظات : {data.note_police}</div>
-<ReportLocation/>
+                    {/* <div> موقع الحدث : {data.location_name}</div> */}
+<ReportLocation location={data.location_name}/>
+<TimeAndDistance report={data}/>
+<RedirectToMap lat={data.lat} lng={data.lng}/>
                     {!data.start && (
                         <AcceptModal action='start' name='الأنتقال للحدث' id={data.id} />
                     )}
