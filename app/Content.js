@@ -23,7 +23,7 @@ if(token){
      }
      return data
   }
-  verivey()
+  // verivey()
 }
 
       return () => {
@@ -31,8 +31,9 @@ if(token){
       }
     }, [])
     
-   if(!isLogin) return <Login/>
-  if(isLogin)return  <> {children}</>
+  //  if(!isLogin) return <Login/>
+ return  <> {children}</>
+  // if(isLogin)return  <> {children}</>
 
 }
 
