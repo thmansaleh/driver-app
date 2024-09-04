@@ -9,7 +9,6 @@ export function swrDriverReports(){
  const url ="https://express-rta.vercel.app/get-driver-reports-today"
   const fetcher = async () => {
     const token=localStorage.getItem('token')
-
    const response = await axios.get(url,{
     headers: {
       authorization: `${token}`
