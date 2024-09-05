@@ -1,5 +1,4 @@
 import { useRouter } from "next/navigation"
-import InformationModal from "./Modal"
 
 export default function Table({data}) {
   // return 'grg'
@@ -13,7 +12,6 @@ export default function Table({data}) {
      <td onClick={() => router.push(`./reports/${report.id}`)} className="text-green-500  font-semibold  py-4">
    {report.report_no}
         </td>
-        {/* <InformationModal report={report}/> */}
     
         <td className=" py-4">
         {report.source_name}

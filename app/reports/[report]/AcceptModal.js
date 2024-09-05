@@ -13,7 +13,7 @@ export function AcceptModal({id,action,name}) {
   }
   return (
     <>
-      <Button className="  w-full" gradientMonochrome="success" size='xs' onClick={() => setOpenModal(true)}>{
+      <Button className="  w-full" gradientMonochrome="success" size='sm' onClick={() => setOpenModal(true)}>{
         name}</Button>
 
       <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} popup>

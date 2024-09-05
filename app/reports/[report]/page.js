@@ -4,6 +4,7 @@ import ReportLocation from "./ReportLocation"
 import { AcceptModal } from "./AcceptModal"
 import TimeAndDistance from "./TimeAndDistance"
 import RedirectToMap from "./RedirectToMap"
+import ReportDetailsModal from "./ReportDetailsModal"
 
 function page({ params }) {
     const reportId = params.report
@@ -16,8 +17,8 @@ function page({ params }) {
 
     if (data) {
         return (
-            <div className='bg-gray-1003 text-center space-y-3 text-base flex font-semibold p-3 flex-col text-gray-900 flex-1'>
-                <div className="bg-gray-200 text-center rounded-lg py-2 px-3 text-base text-green-600 font-bold">
+            <div className='bg-gray-1003 text-center space-y-3 text-sm flex font-semibold p-3 flex-col text-gray-900 flex-1'>
+                <div className="bg-gray-200 text-center rounded-lg py-2 px-3 text-sm text-green-600 font-bold">
                     رقم الحدث : {data.report_no}
                 </div>
 
@@ -32,6 +33,7 @@ function page({ params }) {
 <ReportLocation location={data.location_name}/>
 <TimeAndDistance report={data}/>
 <RedirectToMap lat={data.lat} lng={data.lng}/>
+<ReportDetailsModal report={data}/>
                     {!data.start && (
                         <AcceptModal action='start' name='الأنتقال للحدث' id={data.id} />
                     )}
