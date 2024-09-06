@@ -4,22 +4,16 @@
 import { Button, Drawer, Sidebar, TextInput } from "flowbite-react";
 import { useState } from "react";
 import {
-  HiChartPie,
-  HiClipboard,
-  HiCollection,
-  HiInformationCircle,
   HiLogin,
-  HiPencil,
-  HiSearch,
-  HiShoppingBag,
-  HiUsers,
+
 } from "react-icons/hi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../store/features/account";
 
-export default function LogOutBtn() {
+export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
 const dispatch=useDispatch()
+const account =useSelector(state=>state.account.account)
   const handleClose = () => setIsOpen(false);
 
   return (
@@ -45,12 +39,41 @@ const dispatch=useDispatch()
              
                 <Sidebar.Items>
                   <Sidebar.ItemGroup>
-                    
+                  <Sidebar.Item  className=' text-gray-600 text-sm font-semibold' >
+                     <div>
+                      المستخدم 
+                      :
+                      {account.name}
+                     </div>
+                    </Sidebar.Item>
+                  <Sidebar.Item  className=' text-gray-600 text-sm font-semibold' >
+                     <div>
+                      الدورية 
+                      :
+                      {account.nida}
+                     </div>
+                    </Sidebar.Item>
+                  <Sidebar.Item  className=' text-gray-600 text-sm font-semibold' >
+                     <div>
+                      الفترة  
+                      :
+                      {account.period}
+                     </div>
+                    </Sidebar.Item>
+                  <Sidebar.Item  className=' text-gray-600 text-sm font-semibold' >
+                     <div>
+                      وقت استلام الدورية  
+                      :
+                      {new Date(account.date).toLocaleTimeString()}
+                     </div>
+                    </Sidebar.Item>
+
                     <Sidebar.Item  onClick={()=>{
 dispatch(logOut())
                     }} className='text-red-600' icon={HiLogin}>
                      تسجيل خروج
                     </Sidebar.Item>
+                
                   
                   </Sidebar.ItemGroup>
               

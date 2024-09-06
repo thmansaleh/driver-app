@@ -32,7 +32,7 @@ loading.current.style.display='flex'
 
           loading.current.style.display='none'
 
-          errorMsg.current.innerText='أسم المستخدم او كلمة المرور خاطئة'
+          errorMsg.current.innerText='المستخدم غير مسجل على الدوام'
 
          }
 

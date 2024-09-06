@@ -33,15 +33,15 @@ function page({ params }) {
 <ReportLocation location={data.location_name}/>
 <TimeAndDistance report={data}/>
 <RedirectToMap lat={data.lat} lng={data.lng}/>
-<ReportDetailsModal report={data}/>
+{/* <ReportDetailsModal report={data}/> */}
                     {!data.start && (
-                        <AcceptModal action='start' name='الأنتقال للحدث' id={data.id} />
+                        <AcceptModal  reportId={reportId} action='start' name='بدء الحدث' id={data.id} />
                     )}
                     {data.start && !data.arrive && !data.finish && (
-                        <AcceptModal action='arrive' name='تغيير الحالة الى وصول' id={data.id} />
+                        <AcceptModal  reportId={reportId} action='arrive' name='تغيير الحالة الى وصول' id={data.id} />
                     )}
                     {(data.arrive && !data.finish) && (
-                        <AcceptModal action='finish' name='انهاء الحدث' id={data.id} />
+                        <AcceptModal reportId={reportId} action='finish' name='انهاء الحدث' id={data.id} />
                     )}
                 </div>
             </div>

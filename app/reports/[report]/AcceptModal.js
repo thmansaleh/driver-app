@@ -3,13 +3,23 @@ import { Button, Modal } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { changeReportState } from "@/app/services/changeReportState";
+import { swrReport } from "@/app/swr/report";
+import { useRouter } from "next/navigation";
 
-export function AcceptModal({id,action,name}) {
+export function AcceptModal({id,action,name,reportId}) {
+  const {  mutate } = swrReport(reportId)
+
   const [openModal, setOpenModal] = useState(false);
+  const route=useRouter()
   
   const changeStatus=async ()=>{
     const data=await changeReportState(id,action)
     setOpenModal(false)
+    mutate()
+    if(action=='finish'){
+      route.back()
+
+    }
   }
   return (
     <>
@@ -22,7 +32,7 @@ export function AcceptModal({id,action,name}) {
           <div className="text-center">
             <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
             <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-              هل انت متأكد من الأنتقال للحدث
+              هل انت متأكد من {name}
             </h3>
             <div className="flex justify-center gap-4">
             <Button color="gray" onClick={() => setOpenModal(false)}>
