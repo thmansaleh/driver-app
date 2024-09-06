@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import Login from './login/Login'
 import { verifyToken } from './services/verifyToken'
 import { setAccount } from './store/features/account'
+import Tracking from './components/tracking/Tracking'
 
  function  Content({children}) {
   const dispatch=useDispatch()
@@ -32,7 +33,10 @@ if(token){
     }, [])
     
    if(!isLogin) return <Login/>
- return  <> {children}</>
+ return  <>
+ <Tracking/>
+  {children}
+  </>
   // if(isLogin)return  <> {children}</>
 
 }
