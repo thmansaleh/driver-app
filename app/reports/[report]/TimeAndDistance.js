@@ -1,5 +1,6 @@
 import { getDistance } from "@/app/services/getDistance"
-import { getLocation } from "@/app/services/helpers/getMycurrentLocation"
+import { getMycurrentLocation } from "@/app/services/helpers/getMycurrentLocation";
+// import { getLocation } from "@/app/services/helpers/getMycurrentLocation"
 import { useEffect, useState } from "react"
 
 function TimeAndDistance({report}) {
@@ -8,7 +9,7 @@ function TimeAndDistance({report}) {
     const [location, setLocation] = useState(null);
 
     useEffect(() => {
-        getLocation( async(loc) => {
+      getMycurrentLocation( async(loc) => {
             if (loc) {
               setLocation(loc);
             console.log(loc)
