@@ -1,9 +1,9 @@
 
 import axios from 'axios';
-const apiUrl='https://express-rta.vercel.app'
+import { apiUrl } from '../constants';
 const url =`${apiUrl}/add-plate`
 
-export const addPlate= async ( report_no, plate_no, plate_source,removed ) => {
+export const addPlate= async ( reportId,plateNo,source,carTypeId,isRemoved ) => {
     const token=localStorage.getItem('token')
 
    const response = await axios.get(url,{
@@ -12,10 +12,11 @@ export const addPlate= async ( report_no, plate_no, plate_source,removed ) => {
       authorization: `${token}`
   },
      params: { 
-        report_no:report_no,
-        plate_no:plate_no,
-        plate_source:plate_source,
-        removed:removed
+      report_id:reportId,
+      plate_no:plateNo,
+      plate_source:source,
+      car_type_id:carTypeId,
+      is_removed:isRemoved
     } });
    return response.data;
  };

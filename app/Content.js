@@ -24,7 +24,7 @@ if(token){
      }
      return data
   }
-  // verivey()
+  verivey()
 }
 
       return () => {

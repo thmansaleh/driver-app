@@ -3,10 +3,10 @@
 
 import { Button, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
-import PlatesModal from "../PlatesModal";
 import { updateReport } from "../../services/updateReport";
-import Plates from "../Plates";
+import Plates from "./Plates";
 import { swrReport } from "@/app/swr/report";
+import AddPlateModal from "./AddPlateModal";
 
 export default function ReportDetailsModal ({report}) {
   const [openModal, setOpenModal] = useState(false);
@@ -73,8 +73,8 @@ const update=async()=>{
             :
             <TextInput defaultValue={report.note}  onChange={e=>setNote(e.target.value)} className="w-36"  type="text" />
             </div>
-            <Plates reportNo={report.report_no}/>
-            <PlatesModal report={report}/>
+            <Plates reportId={report.id}/>
+            <AddPlateModal reportId={report.id}/>
 
       </div>
    </Modal.Body>

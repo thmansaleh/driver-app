@@ -4,7 +4,7 @@ import ReportLocation from "./ReportLocation"
 import { AcceptModal } from "./AcceptModal"
 import TimeAndDistance from "./TimeAndDistance"
 import RedirectToMap from "./RedirectToMap"
-import ReportDetailsModal from "./ReportDetailsModal"
+import ReportDetailsModal from "../details/ReportDetailsModal"
 
 function page({ params }) {
     const reportId = params.report
@@ -31,9 +31,9 @@ function page({ params }) {
                     <div> الملاحظات : {data.note_police}</div>
                     {/* <div> موقع الحدث : {data.location_name}</div> */}
 <ReportLocation location={data.location_name}/>
-<TimeAndDistance report={data}/>
+{/* <TimeAndDistance report={data}/> */}
 <RedirectToMap lat={data.lat} lng={data.lng}/>
-{/* <ReportDetailsModal report={data}/> */}
+<ReportDetailsModal report={data}/>
                     {!data.start && (
                         <AcceptModal  reportId={reportId} action='start' name='بدء الحدث' id={data.id} />
                     )}

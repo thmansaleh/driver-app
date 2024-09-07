@@ -3,20 +3,16 @@
 import axios from 'axios';
 
 import useSWR from 'swr'
+import { apiUrl } from '../constants';
 
-export function swrReportPlates(reportId){
+export function swrCarsType(){
   const token=localStorage.getItem('token')
 
-    const apiUrl='https://express-rta.vercel.app'
-    const url =`${apiUrl}/report-plates`
+    const url =`${apiUrl}/get-cars-type`
   const fetcher = async () => {
    const response = await axios.get(url,{
-
     headers: {
       authorization: `${token}`
-  },
-  params:{
-    id:reportId
   }
    });
 
@@ -29,6 +25,5 @@ return {
    error,
    mutate
 }
-
 
 }

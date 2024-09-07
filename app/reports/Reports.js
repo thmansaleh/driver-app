@@ -1,6 +1,6 @@
 import { Spinner } from "flowbite-react"
 import { swrDriverReports } from "../swr/driverReports"
-import InformationModal from "./[report]/ReportDetailsModal"
+import InformationModal from "./details/ReportDetailsModal"
 import Table from "./Table"
 import BackArrowBtn from "../components/BackArrowBtn"
 import SingleReport from "./SingleReport"
