@@ -1,8 +1,6 @@
 
 import axios from 'axios';
-//  const url ="https://express-rta.vercel.app/delete-user-from-cars-histpry"
-const apiUrl='https://express-rta.vercel.app'
-
+import { apiUrl } from '../constants';
 const url =`${apiUrl}/update-car-location`
 
   export const updatCarLocation= async (nida,lat,lng) => {

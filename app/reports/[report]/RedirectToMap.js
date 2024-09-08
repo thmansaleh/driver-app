@@ -7,6 +7,7 @@ function RedirectToMap({lat,lng}) {
   const redirect=()=>{
     let random = Math.random()
     const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}&random=${random}`
+    router.push(url)
 
   }
   return (
