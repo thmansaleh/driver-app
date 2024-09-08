@@ -3,9 +3,14 @@ import { useRouter } from 'next/navigation'
 
 function RedirectToMap({lat,lng}) {
   const router=useRouter()
-    const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`
+  
+  const redirect=()=>{
+    let random = Math.random()
+    const url = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}&random=${random}`
+
+  }
   return (
-    <Button className="  w-full" gradientMonochrome="success" size='sm'  onClick={()=>router.push(url)} >عرض الموقع على الخريطة</Button>
+    <Button className="  w-full" gradientMonochrome="success" size='sm'  onClick={redirect} >عرض الموقع على الخريطة</Button>
   )
 }
 
