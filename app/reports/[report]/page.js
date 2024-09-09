@@ -19,8 +19,11 @@ function page({ params }) {
 
   
 return <>
+<div className="  w-full">
 <Tabs/>
- <Content/>
+<Content/>
+
+</div>
 </>
     return null
 }
