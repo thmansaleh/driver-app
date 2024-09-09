@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from "firebase/storage";
 import { storage } from "./firebase"; // Import storage from the firebase.js file
+import { addUrlImage } from "@/app/services/addUrlImage";
+import { useSelector } from "react-redux";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
   const [downloadURLs, setDownloadURLs] = useState([]);
+  const reportId=useSelector(state=>state.reports.reportId)
+
 
   // Function to handle file selection (only images)
   const handleFileChange = (e) => {
@@ -42,6 +46,9 @@ const FileUpload = () => {
           setDownloadURLs((prevURLs) => [...prevURLs, { name: file.name, url }]);
           setFile(null); // Reset file after upload
           setProgress(0); // Reset progress
+
+          // Call the function to save the URL in the database
+          addUrlImage(reportId,url);
         });
       }
     );
@@ -60,15 +67,18 @@ const FileUpload = () => {
       });
   };
 
+  // Function to save the image URL to the database
+
+
   return (
     <div className="flex flex-col items-center p-4 bg-gray-50 min-h-screen">
       {/* <h1 className="text-2xl font-bold mb-4">Upload an Image</h1> */}
 
       {/* Display uploaded images in a table */}
       {downloadURLs.length > 0 && (
-        <table className="table-auto text-center mb-6 w-full ">
+        <table className="table-auto text-center mb-6 w-full">
           <thead>
-            <tr className="text-sm font-bold  text-center text-gray-700">
+            <tr className="text-sm font-bold text-center text-gray-700">
               <th className="p-2">الصورة</th>
               <th className="p-2">اجراء</th>
             </tr>
@@ -77,9 +87,9 @@ const FileUpload = () => {
             {downloadURLs.map((item, index) => (
               <tr key={index} className="text-center border-b">
                 <td className="p-2 text-center">
-                  <img 
-                    src={item.url} 
-                    alt={`Uploaded ${item.name}`} 
+                  <img
+                    src={item.url}
+                    alt={`Uploaded ${item.name}`}
                     className="rounded-lg w-24 h-24 object-cover"
                   />
                 </td>
@@ -88,7 +98,7 @@ const FileUpload = () => {
                     onClick={() => handleDelete(item.name, item.url)}
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded-lg"
                   >
-                     حذف
+                    حذف
                   </button>
                 </td>
               </tr>
