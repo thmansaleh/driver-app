@@ -2,7 +2,7 @@ import React from 'react'
 import Details from './Details'
 import Info from './Info'
 import Vehicles from './vehicles/Vehicles'
-import Media from './Media'
+import Media from './media/Media'
 import { useSelector } from 'react-redux'
 
 function Content() {
