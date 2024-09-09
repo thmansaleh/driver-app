@@ -48,6 +48,7 @@ const FileUpload = () => {
           setProgress(0); // Reset progress
 
           // Call the function to save the URL in the database
+          console.log('my data',reportId,url)
           addUrlImage(reportId,url);
         });
       }
