@@ -1,12 +1,13 @@
 'use client'
 
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 import useSWR from 'swr'
 
-export function swrReportPlates(reportId){
+export function swrReportPlates(){
   const token=localStorage.getItem('token')
-
+const reportId=useSelector(state=>state.reports.reportId)
     const apiUrl='https://express-rta.vercel.app'
     const url =`${apiUrl}/report-plates`
   const fetcher = async () => {

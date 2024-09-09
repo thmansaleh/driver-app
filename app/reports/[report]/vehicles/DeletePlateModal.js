@@ -2,17 +2,21 @@
 import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-import { deletePlate  as deleteCarPlate} from "../../services/deletePlate";
+import { deletePlate  as deleteCarPlate} from "../../../services/deletePlate";
+import { swrReportPlates } from "@/app/swr/plates";
 
 export default function DeletePlateModal({id}) {
   const [openModal, setOpenModal] = useState(false);
+  const {  mutate } = swrReportPlates()
+
   const deletePlate=async ()=>{
     const data=await deleteCarPlate(id)
     setOpenModal(false)
+    mutate()
   }
   return (
     <>
-      <Button size='xs' onClick={() => setOpenModal(true)}>حذف</Button>
+      <Button gradientMonochrome="failure" size='xs' onClick={() => setOpenModal(true)}>حذف</Button>
       <Modal show={openModal} size="md" onClose={() => setOpenModal(false)} popup>
         <Modal.Header />
         <Modal.Body>

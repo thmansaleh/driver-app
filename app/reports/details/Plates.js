@@ -1,6 +1,6 @@
 import { swrReportPlates } from '../../swr/plates'
 import { Button } from 'flowbite-react'
-import DeletePlateModal from './DeletePlateModal'
+import DeletePlateModal from '../[report]/vehicles/DeletePlateModal'
 
 function Plates({reportId}) {
     const { data , error, isLoading } = swrReportPlates(reportId)

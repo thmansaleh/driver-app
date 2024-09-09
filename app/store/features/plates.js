@@ -8,7 +8,8 @@ const plates= createSlice({
     plateNo:null,
     source:null,
     carTypeId:null,
-    isRemoved:null
+    isRemoved:null,
+    modal:false
    
   
 },
@@ -29,6 +30,9 @@ const plates= createSlice({
             break;
         case 'isRemoved':
             state.isRemoved=action.payload.data
+            break;
+        case 'modal':
+            state.modal=action.payload.data
             break;
 
       

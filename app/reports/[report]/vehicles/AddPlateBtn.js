@@ -1,22 +1,23 @@
 // import { addPlate } from "@/app/services/addPlate"
 import { addPlate  as savePlateToDb} from "@/app/services/addPlate"
+import { addPlate } from "@/app/store/features/plates"
+import { swrReportPlates } from "@/app/swr/plates"
 import { Button } from "flowbite-react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
-function AddPlateBtn({reportId}) {
+function AddPlateBtn() {
     const plate=useSelector(state=>state.plates)
+    const reportId =useSelector(state=>state.reports.reportId)
+    const { mutate } = swrReportPlates()
+    const dispatch=useDispatch()
+
+
     const add= async()=>{
-        // {
-        //     "reportId": null,
-        //     "plateNo": "we2344",
-        //     "source": null,
-        //     "carTypeId": "2",
-        //     "isRemoved": "لا"
-        // }
+       
           const data=await savePlateToDb(reportId,plate.plateNo,plate.source,plate.carTypeId,plate.isRemoved)
-//   setOpenModal(false)
-//   mutate()
-console.log(plate)
+          dispatch(addPlate({action:'modal',data:false}))
+  mutate()
+// console.log(plate)
     }
   return (
     <Button onClick={add}>اضافة</Button>

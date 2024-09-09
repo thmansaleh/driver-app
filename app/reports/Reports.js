@@ -4,6 +4,7 @@ import InformationModal from "./details/ReportDetailsModal"
 import Table from "./Table"
 import BackArrowBtn from "../components/BackArrowBtn"
 import SingleReport from "./SingleReport"
+import { useDispatch } from "react-redux"
 
 function Reports() {
     const { data , isLoading } = swrDriverReports()

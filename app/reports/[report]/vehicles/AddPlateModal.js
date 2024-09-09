@@ -4,32 +4,32 @@
 import { Button, Label, Modal, Radio, Select, TextInput } from "flowbite-react";
 import { useState } from "react";
 // import { addPlate } from "../../services/addPlate";
-import { swrReportPlates } from "../../swr/plates";
-import CarsType from "./CarsType";
-import Source from "./Source";
-import { useDispatch } from "react-redux";
+import { swrReportPlates } from "../../../swr/plates";
+import CarsType from "../../details/CarsType";
+import Source from "../../details/Source";
+import { useDispatch, useSelector } from "react-redux";
 import { addPlate } from "@/app/store/features/plates";
 import AddPlateBtn from "./AddPlateBtn";
 
-export default function AddPlateModal ({reportId}) {
+export default function AddPlateModal () {
+  const reportId =useSelector(state=>state.reports.reportId)
   const { data , error, mutate } = swrReportPlates(reportId)
 const dispatch=useDispatch()
-  const [openModal, setOpenModal] = useState(false);
-  const [plateNo, setPlateNo] = useState('');
-  const [plateSource, setPlateSource] = useState('');
-  const [removed, setRemoved] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
+  const modalDisplay=useSelector(state=>state.plates.modal)
+
 
 
   return (
     <>
    
-        <th onClick={() => setOpenModal(true)} scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-<div>       <Button>اضافة مركبات</Button>
+<div>  
+       <Button gradientMonochrome="success" size='xs' onClick={()=>dispatch(addPlate({action:'modal',data:true}))}>اضافة مركبة</Button>
 </div>
-        </th>
+        
        
 
-        <Modal show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal show={modalDisplay} onClose={() => dispatch(addPlate({action:'modal',data:false}))}>
         <Modal.Header></Modal.Header>
         <Modal.Body>
       <div className="space-y-3 text-sm">
@@ -71,7 +71,7 @@ const dispatch=useDispatch()
       </div>
    </Modal.Body>
    <Modal.Footer>
-       <AddPlateBtn reportId={reportId}/>
+       <AddPlateBtn />
         </Modal.Footer>
       </Modal>
     </>

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { updateReport } from "../../services/updateReport";
 import Plates from "./Plates";
 import { swrReport } from "@/app/swr/report";
-import AddPlateModal from "./AddPlateModal";
+import AddPlateModal from "../[report]/vehicles/AddPlateModal";
 
 export default function ReportDetailsModal ({report}) {
   const [openModal, setOpenModal] = useState(false);

@@ -6,81 +6,49 @@ const reports= createSlice({
   initialState: {
     modalDispaly:false,
     page:null,
+    tab:'info',
+    reportId:null,
+    closeCount:null,
+    carsPosition:null,
+    description:null,
+    note:null,
    
-    addReport:{
-        
-        id:null,
-        nida:'',
-        reportNo:'',
-        sourceId:'',
-        typeId:'',
-        start:'',
-        arrive:'',
-        finish:'',
-        streetId:'',
-        description:'',
-        note:'',
-        period:'',
- 
-    
 
-    }
 },
   reducers: {
-    addReport: (state, action) => {
-      state.currentDrivers=action.payload;
-      state.drivers=action.payload;
+    setDetails: (state, action) => {
       switch (action.payload.action) {
-        case 'nida':
-            state.addReport.nida=action.payload.data
+        case 'closeCount':
+            state.closeCount=action.payload.data
             break;
-        case 'reportNo':
-            state.addReport.reportNo=action.payload.data
-            break;
-        case 'sourceId':
-            state.addReport.sourceId=action.payload.data
-            break;
-        case 'typeId':
-            state.addReport.typeId=action.payload.data
-            break;
-        case 'start':
-            state.addReport.start=action.payload.data
-            break;
-        case 'arrive':
-            state.addReport.arrive=action.payload.data
-            break;
-        case 'finish':
-            state.addReport.finish=action.payload.data
-            break;
-        case 'streetId':
-            state.addReport.streetId=action.payload.data
+        case 'carsPosition':
+            state.carsPosition=action.payload.data
             break;
         case 'description':
-            state.addReport.description=action.payload.data
+            state.description=action.payload.data
             break;
-  
         case 'note':
-            state.addReport.note=action.payload.data
+            state.note=action.payload.data
             break;
-        case 'modalDispaly':
-            state.modalDispaly=action.payload.data
-            break;
-        case 'page':
-            state.page=action.payload.data
-            break;
-        case 'new':
-            state.addReport=action.payload.data
-            break;
+      
+     
       
         default:
             break;
       }
     },
+    setTab: (state, action) => {
+       state.tab=action.payload
+      },
+    setReportId: (state, action) => {
+       state.reportId=action.payload
+      },
+   
  
 
   },
 });
 
-export const { addReport} = reports.actions;
+export const { setDetails,setTab,setReportId} = reports.actions;
 
 export default reports.reducer;
