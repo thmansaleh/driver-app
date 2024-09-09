@@ -10,7 +10,7 @@ export default function SingleReport({data}) {
     return <div className="bg-green-500 text-white text-center shadow-lg rounded-lg p-3 w-64 text-sm font-semibold" 
     onClick={() => {
       dispatch(setReportId(report.id))
-      router.push(`./reports/${report.id}`)
+      // router.push(`./reports/${report.id}`)
     }
   }
      key={report.id}>

@@ -6,7 +6,8 @@ import useSWR from 'swr'
 import { useSelector } from 'react-redux';
 import { apiUrl } from '../constants';
 
-export function swrReport(reportId){
+export function swrReport(){
+  const reportId=useSelector(state=>state.reports.reportId)
 
 const url =`${apiUrl}/get-report?id=${reportId}`
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Details from './Details'
+import Details from './details/Details'
 import Info from './Info'
 import Vehicles from './vehicles/Vehicles'
 import Media from './media/Media'

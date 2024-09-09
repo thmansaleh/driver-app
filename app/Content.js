@@ -7,11 +7,14 @@ import Login from './login/Login'
 import { verifyToken } from './services/verifyToken'
 import { setAccount } from './store/features/account'
 import Tracking from './components/tracking/Tracking'
+import Report from './report/Report'
 
  function  Content({children}) {
   const dispatch=useDispatch()
   const router=useRouter()
   const isLogin =useSelector(state=>state.account.isLogin)
+  const reportId=useSelector(state=>state.reports.reportId)
+
  
     useEffect(() => {
     const token =localStorage.getItem('token')
@@ -33,8 +36,9 @@ if(token){
     }, [])
     
    if(!isLogin) return <Login/>
+   if(reportId) return <Report/>
  return  <>
- {/* <Tracking/> */}
+ <Tracking/>
   {children}
   </>
   // if(isLogin)return  <> {children}</>

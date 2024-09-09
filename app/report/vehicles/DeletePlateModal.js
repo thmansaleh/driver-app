@@ -2,7 +2,7 @@
 import { Button, Modal } from "flowbite-react";
 import { useState } from "react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-import { deletePlate  as deleteCarPlate} from "../../../services/deletePlate";
+import { deletePlate  as deleteCarPlate} from "../../services/deletePlate";
 import { swrReportPlates } from "@/app/swr/plates";
 
 export default function DeletePlateModal({id}) {

@@ -1,17 +1,12 @@
 'use client'
 import { swrReport } from "@/app/swr/report"
-import ReportLocation from "./ReportLocation"
-import { AcceptModal } from "./AcceptModal"
-import TimeAndDistance from "./TimeAndDistance"
-import RedirectToMap from "./RedirectToMap"
-import ReportDetailsModal from "../details/ReportDetailsModal"
+
 import Content from "./Content"
 import Tabs from "./tabs/Tabs"
 
-function page({ params }) {
-    const reportId = params.report
+function Report() {
 
-    const { data, error, isLoading, mutate } = swrReport(reportId)
+    const { data, error, isLoading, mutate } = swrReport()
     
     if (isLoading) return 'loading'
 
@@ -28,7 +23,7 @@ return <>
     return null
 }
 
-export default page
+export default Report
 // if (data) {
 //     return (
 //         <div className='bg-gray-1003 text-center space-y-3 text-sm flex font-semibold p-3 flex-col text-gray-900 flex-1'>

@@ -4,9 +4,9 @@
 import { Button, Label, Modal, Radio, Select, TextInput } from "flowbite-react";
 import { useState } from "react";
 // import { addPlate } from "../../services/addPlate";
-import { swrReportPlates } from "../../../swr/plates";
-import CarsType from "../../details/CarsType";
-import Source from "../../details/Source";
+import { swrReportPlates } from "../../swr/plates";
+import CarsType from "../../reports/details/CarsType";
+import Source from "../../reports/details/Source";
 import { useDispatch, useSelector } from "react-redux";
 import { addPlate } from "@/app/store/features/plates";
 import AddPlateBtn from "./AddPlateBtn";
