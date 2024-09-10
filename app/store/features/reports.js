@@ -12,6 +12,9 @@ const reports= createSlice({
     carsPosition:null,
     description:null,
     note:null,
+    showReport:false,
+    modalStatusDisplay:false,
+
    
 
 },
@@ -29,6 +32,12 @@ const reports= createSlice({
             break;
         case 'note':
             state.note=action.payload.data
+            break;
+        case 'showReport':
+            state.showReport=action.payload.data
+            break;
+        case 'modalStatusDisplay':
+            state.modalStatusDisplay=action.payload.data
             break;
       
      

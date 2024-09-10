@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './styles.css'
 import { setTab } from '@/app/store/features/reports';
+import ChangeReportStatusModal from '../ChangeReportStatusModal';
 export default function Tabs() {
   const dispatch=useDispatch()
   const tabName=useSelector(state=>state.reports.tab)
@@ -49,6 +50,7 @@ export default function Tabs() {
 </label>
 </div>  
   })}
+  <ChangeReportStatusModal showBtn={true}/>
    
   </div>
 }

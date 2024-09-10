@@ -8,12 +8,14 @@ import { verifyToken } from './services/verifyToken'
 import { setAccount } from './store/features/account'
 import Tracking from './components/tracking/Tracking'
 import Report from './report/Report'
+import ChangeReportStatusModal from './report/ChangeReportStatusModal'
 
  function  Content({children}) {
   const dispatch=useDispatch()
   const router=useRouter()
   const isLogin =useSelector(state=>state.account.isLogin)
   const reportId=useSelector(state=>state.reports.reportId)
+  const showReport=useSelector(state=>state.reports.showReport)
 
  
     useEffect(() => {
@@ -36,10 +38,15 @@ if(token){
     }, [])
     
    if(!isLogin) return <Login/>
-   if(reportId) return <Report/>
+   if(showReport) return<>
+    <Report/>
+    <ChangeReportStatusModal showBtn={false}/>
+
+   </>
  return  <>
  <Tracking/>
   {children}
+ <ChangeReportStatusModal showBtn={false}/>
   </>
   // if(isLogin)return  <> {children}</>
 

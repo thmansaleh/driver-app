@@ -15,8 +15,8 @@ function SaveBtn() {
         // setOpenModal(false)
         // mutate()
       }
-  return <Button onClick={update}>
-    update
+  return <Button  gradientMonochrome="success"  size='sm' onClick={update}>
+    تحديث
   </Button>
 }
 

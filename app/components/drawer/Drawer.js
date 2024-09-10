@@ -12,6 +12,7 @@ import Drivers from "./Drivers";
 import Patrol from "./Patrol";
 import Logout from "./Logout";
 import Period from "./Period";
+import Station from "./Station";
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +28,7 @@ const account =useSelector(state=>state.account.account)
     <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
   </svg>
 </button>
-      {/* <div className="flex min-h-[50vh] items-center justify-center">
-        <Button onClick={() => setIsOpen(true)}>Show navigation</Button>
-      </div> */}
+    
       <Drawer className="w-full" dir="rtl" open={isOpen} onClose={handleClose} position="top">
         <Drawer.Header title="القائمة" titleIcon={() => <></>} />
         <div>
@@ -40,6 +39,7 @@ const account =useSelector(state=>state.account.account)
              <Drivers/>
              <Patrol/>
              <Period/>
+             <Station/>
              <Logout/>
             </div>
       </Drawer>
