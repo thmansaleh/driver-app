@@ -16,6 +16,7 @@ function Table() {
                     <td>مصدر المركبة</td>
                     <td>نوع المركبة</td>
                     <td>تم ازاحتها بواسطة كرين المواصلات   (نعم,لا)</td>
+                    <td>رقم الكرين</td>
                     <td></td>
                   </tr>
                 </thead>
@@ -25,7 +26,8 @@ function Table() {
                   <td className="py-2">{car.plate_no}</td>
                   <td>{car.plate_source}</td>
                   <td>{car.type}</td>
-                  <td>{car.is_removed}</td>
+                  <td>{car.is_removed=='true'?'نعم':'لا'}</td>
+                  <td>{car.is_removed=='true'?car.recovery_no:''}</td>
                   <td><DeletePlateModal id={car.id}/></td>
                 </tr>
                 })}

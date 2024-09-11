@@ -14,7 +14,7 @@ function AddPlateBtn() {
 
     const add= async()=>{
        
-          const data=await savePlateToDb(reportId,plate.plateNo,plate.source,plate.carTypeId,plate.isRemoved)
+          const data=await savePlateToDb(reportId,plate.plateNo,plate.source,plate.carTypeId,plate.isRemoved,plate.recoveryNo)
           dispatch(addPlate({action:'modal',data:false}))
   mutate()
 // console.log(plate)

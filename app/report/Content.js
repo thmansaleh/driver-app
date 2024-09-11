@@ -1,6 +1,6 @@
 import React from 'react'
 import Details from './details/Details'
-import Info from './Info'
+import Info from './info/Info'
 import Vehicles from './vehicles/Vehicles'
 import Media from './media/Media'
 import { useSelector } from 'react-redux'

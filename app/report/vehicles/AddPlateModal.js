@@ -17,6 +17,7 @@ export default function AddPlateModal () {
 const dispatch=useDispatch()
   const [openModal, setOpenModal] = useState(false)
   const modalDisplay=useSelector(state=>state.plates.modal)
+  const plate=useSelector(state=>state.plates)
 
 
 
@@ -58,16 +59,28 @@ const dispatch=useDispatch()
             className="mb-4 text-green-500 font-semibold">تم الإزاحة بواسطة الكرين؟</legend>
    
       <div className="flex items-center gap-2">
-        <Radio  onChange={(e)=>dispatch(addPlate({action:'isRemoved',data:e.target.value}))} id="germany" name="countries" value='نعم' />
+        <Radio  onChange={(e)=>dispatch(addPlate({action:'isRemoved',data:e.target.value}))} id="germany" name="countries" value={true} />
         <Label htmlFor="germany">نعم</Label>
       </div>
       <div className="flex items-center gap-2">
-        <Radio onChange={(e)=>dispatch(addPlate({action:'isRemoved',data:e.target.value}))} id="true" name="countries" value='لا' />
+        <Radio onChange={(e)=>dispatch(addPlate({action:'isRemoved',data:e.target.value}))} id="false" name="countries" value={false} />
         <Label htmlFor="germany">لا</Label>
       </div>
      
   
     </fieldset>
+{plate.isRemoved==='true'? <div className="flex gap-x-3  items-center">
+            <span className="text-green-500 font-semibold">
+              
+            رقم الكرين
+            </span>
+            
+            :
+            <TextInput 
+            // onChange={e=>dispatch(e.target.value)}
+            onChange={(e)=>dispatch(addPlate({action:'recoveryNo',data:e.target.value}))}
+             className="w-28"  type="number" />
+            </div>:null}
       </div>
    </Modal.Body>
    <Modal.Footer>

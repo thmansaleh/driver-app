@@ -2,15 +2,18 @@ import { setDetails } from "@/app/store/features/reports"
 import { TextInput } from "flowbite-react"
 import { useDispatch, useSelector } from "react-redux"
 import SaveBtn from "./SaveBtn"
+import { swrReport } from "@/app/swr/report"
 
 function Details() {
   const dispatch=useDispatch()
   const report=useSelector(state=>state.reports)
+  const { data, error, isLoading, mutate } = swrReport()
+
   // closeCount:null,
   // carsPosition:null,
   // description:null,
   // note:null,
-  return (
+ if(data) return (
 <div className="space-y-3 p-3 text-sm">
  <table className="table-auto">
   <tbody class="space-y-12">
@@ -46,6 +49,7 @@ function Details() {
               </span></td>
       <td className="py-2">     
             <TextInput
+            defaultValue={data.description}
              value={report.description} 
              onChange={e=>dispatch(setDetails({action:'description',data:e.target.value}))} 
              className="w-full"  type="text" />

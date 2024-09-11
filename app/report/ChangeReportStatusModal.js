@@ -48,7 +48,7 @@ dispatch(setDetails({action:'modalStatusDisplay',data:false}))
 
             </h3>
             <div className="flex justify-center gap-4">
-              <Button color="failure" onClick={() => dispatch(setDetails({action:'modalStatusDisplay',data:false}))
+              <Button color="gray" onClick={() => dispatch(setDetails({action:'modalStatusDisplay',data:false}))
 }>
                 {"إغلاق"}
               </Button>
