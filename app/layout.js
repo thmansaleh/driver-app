@@ -1,6 +1,7 @@
 import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import ProviderPage from "./Provider";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const metadata = {

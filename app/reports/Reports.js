@@ -13,7 +13,7 @@ if(isLoading) return <div className=" fixed inset-0 flex justify-center items-ce
 </div>
  if(data) {
     if(data.length==0) return <div className=" flex justify-center items-center">
-        <div className=" font-semibold text-gray-800">لاتوجد احداث</div>
+        <div className=" font-semibold  text-gray-800">لاتوجد احداث</div>
     </div>
     return <>
  <div className="p-2 space-y-3">

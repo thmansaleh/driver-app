@@ -2,6 +2,7 @@ import { swrReport } from "@/app/swr/report"
 import { useSelector } from "react-redux"
 import RedirectToMap from "./RedirectToMap"
 import ReportLocation from "./ReportLocation"
+import TimeAndDistance from "./TimeAndDistance"
 
 function Info() {
   const { data, error, isLoading, mutate } = swrReport()
@@ -19,9 +20,8 @@ function Info() {
                 <div> الوصف : {data.description}</div>
                 <div> الملاحظات : {data.note_police}</div>
                 <div> موقع الحدث : {data.location_name}</div>
-{/* <ReportLocation location={data.location_name}/> */}
 {/* <TimeAndDistance report={data}/> */}
-<RedirectToMap lat={data.lat} lng={data.lng}/> 
+{/* <RedirectToMap lat={data.lat} lng={data.lng}/>  */}
 </div> 
 </div> 
 }

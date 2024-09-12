@@ -38,8 +38,8 @@ export const getDistance = async (startLat,startLng,endLat,endLng) => {
 
         // Return the results in Arabic
         return {
-            distance: `${distanceInKm.toFixed(2)} كم`, // distance in kilometers
-            time: `${timeInMinutes.toFixed(2)} دقيقة` // time in minutes
+            distance: `${distanceInKm.toFixed()} كم`, // distance in kilometers
+            time: `${timeInMinutes.toFixed()} دقيقة` // time in minutes
         };
     } catch (error) {
         // console.error('خطأ في الجلب:', error);
