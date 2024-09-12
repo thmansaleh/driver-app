@@ -8,6 +8,9 @@ export const metadata = {
   title: "TIMU",
   description: "TIMU",
 };
+export const viewport = {
+  userScalable: false
+}
 
 export default function RootLayout({ children }) {
   return (
