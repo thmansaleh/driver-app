@@ -21,7 +21,7 @@ function Info() {
                 <div> الملاحظات : {data.note_police}</div>
                 <div> موقع الحدث : {data.location_name}</div>
 {/* <TimeAndDistance report={data}/> */}
-{/* <RedirectToMap lat={data.lat} lng={data.lng}/>  */}
+<RedirectToMap lat={data.lat} lng={data.lng}/> 
 </div> 
 </div> 
 }
