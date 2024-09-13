@@ -19,8 +19,10 @@ const changeStatus=async()=>{
     const action= !data.start?'start':!data.arrive?'arrive':'finish'
 
  const req = await changeReportStatus(data.id,action)
+
  dispatch(setDetails({action:'showReport',data:true}))
  mutate()
+ 
 //  setOpenModal(false)
       //  dispatch(setReportId(data.id))
 
