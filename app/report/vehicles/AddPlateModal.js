@@ -56,7 +56,7 @@ const dispatch=useDispatch()
             <fieldset className="flex max-w-md flex-col gap-4">
       <legend 
             onChange={(e)=>console.log(e.value)}
-            className="mb-4 text-green-500 font-semibold">تم الإزاحة بواسطة الكرين؟</legend>
+            className="mb-4 text-green-500 font-semibold">تم الإزاحة بواسطة كرين المواصلات؟</legend>
    
       <div className="flex items-center gap-2">
         <Radio  onChange={(e)=>dispatch(addPlate({action:'isRemoved',data:e.target.value}))} id="germany" name="countries" value={true} />

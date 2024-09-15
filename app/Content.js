@@ -39,6 +39,7 @@ if(token){
     
    if(!isLogin) return <Login/>
    if(showReport) return<>
+    <Tracking/>
     <Report/>
     <ChangeReportStatusModal showBtn={false}/>
 
