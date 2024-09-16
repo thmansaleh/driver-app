@@ -24,7 +24,7 @@ function Station() {
         {account.station}
         </div>
 
-        <Button className="" gradientMonochrome="success" size='xs'  onClick={redirect} >عرض الموقع على الخريطة</Button>
+        <Button className="" gradientMonochrome="success" size='xs'  onClick={redirect} >عرض الموقع </Button>
 
      </div>
    
